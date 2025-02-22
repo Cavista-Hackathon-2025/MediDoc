@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medications</title>
+</head>
+<body>
+    
+    <h1>Medications</h1>
+
+    <ul>
+        {% for meds in medications %}
+            <li>Name: {{ meds.name }}</li>
+            <li>Dosage: {{ meds.dosage }}</li>
+            <li>Start Date: {{ meds.start_date }}</li>
+            <li>End Date: {{ meds.end_date }}</li>
+            <hr>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'home' %}">Home</a>
+
+</body>
+</html>

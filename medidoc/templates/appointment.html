@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health - Appointment</title>
+</head>
+<body>
+    
+    <h1>Appointment</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ appointmentform.as_p }}
+
+        <button type="submit">Create Appointment</button>
+    </form>
+
+</body>
+</html>
