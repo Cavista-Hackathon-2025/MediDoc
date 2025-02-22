@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health - Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">
+            <h3>MediDoc</h3>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="">Appointments</a></li>
+                <li><a href="">Prescriptions</a></li>
+                <li><a href="">Doctors</a></li>
+                <li><a href="">Insurance</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Welcome to MediDoc</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <div class="form-control">
+                <label class="form-label">{{ loginform.username.label }}</label>
+                {{ loginform.username }}
+                <p style="color: red;">{{ loginform.username.errors }}</p>
+            </div>
+        
+            <div class="form-control">
+                <label class="form-lable">{{ loginform.password.label }}</label>
+                {{ loginform.password }}
+                <p style="color: red;">{{ loginform.email.errors }}</p>
+            </div>
+
+            <div class="check">
+                <input type="checkbox" name="signed-in" id="signed-in"> <p>Keep me signed in</p>
+            </div>
+        
+            <button type="submit" class="submit-btn">Sign in</button>
+
+            <p class="or">or</p>
+
+            <div class="buttons">
+                <button class="btn">Sign in with Google</button>
+                <button class="btn">Sign in with Apple</button>
+            </div>
+
+        </form>
+    </div>
+    
+
+</body>
+</html>
