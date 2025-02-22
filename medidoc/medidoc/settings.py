@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,6 +37,10 @@ INSTALLED_APPS = [
     'appointment',
     'user_auth',
     "django.contrib.sites",
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'medidoc.urls'
@@ -103,30 +111,44 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+GOOGLE_SCOPES = [
+    "https://www.googleapis.com/auth/calendar.events",
+    "https://www.googleapis.com/auth/userinfo.email",
+    "https://www.googleapis.com/auth/userinfo.profile",
+    "openid",
+    "https://www.googleapis.com/auth/calendar"
+]
+
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
+LOGIN_REDIRECT_URL = "home"  # Adjust as needed
+LOGOUT_REDIRECT_URL = "/"
+
+
 SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'APP': {
-            'client_id': '431484799194-gbv7u5jva85ar9k3cdruj3b1c9nnovbs.apps.googleusercontent.com',
-            'secret': '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',
-            'key': ''
-        },
-        'SCOPE': ['profile', 'email'],
-        'AUTH_PARAMS': {'access_type': 'online'},
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+            "https://www.googleapis.com/auth/calendar",
+            "https://www.googleapis.com/auth/calendar.events"
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "offline",
+        }
     }
 }
 
 
-# AUTHENTICATION_BACKENDS = [
-#     "django.contrib.auth.backends.ModelBackend",
-#     "allauth.account.auth_backends.AuthenticationBackend",
-# ]
 
-LOGIN_REDIRECT_URL = "/"  # Adjust as needed
-LOGOUT_REDIRECT_URL = "/"
-ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = True
-SOCIALACCOUNT_QUERY_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
 
 
 # Internationalization
@@ -163,4 +185,11 @@ LOGOUT_REDIRECT_URL = 'landing_page'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-SITE_ID = 1
+
+GOOGLE_CREDENTIALS_FILE = os.path.join(BASE_DIR, 'client_secret.json')
+
+GOOGLE_SCOPES = ['https://www.googleapis.com/auth/calendar']
+
+
+GOOGLE_CLIENT_ID = "431484799194-gbv7u5jva85ar9k3cdruj3b1c9nnovbs.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET = "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"
