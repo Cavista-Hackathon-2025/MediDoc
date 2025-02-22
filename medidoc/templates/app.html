@@ -35,15 +35,16 @@
                 <li>Date: {{ appointment.time }}</li>
                 <li>Status: {{ appointment.status }}</li>
 
-                <a href="{% url 'medications' appointment.id %}">Medications</a>
+                <hr>
+
             </div>
 
-            <a href="{% url 'prescription' appointment.id %}"><button>Prescribe</button></a>
+           
           
         {% endfor %}
     </ul>
     
-    <a href="{% url 'app' %}"><button>Create Appointment</button></a>
+    <a href="{% url 'create_appointment' %}"><button>Create Appointment</button></a>
 
 </body>
 </html>

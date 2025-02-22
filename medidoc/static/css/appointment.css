@@ -57,3 +57,14 @@ nav a{
 .right{
     margin-left: auto;
 }
+.button{
+    padding: 10px;
+    background-color: #4089e8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.button a{
+    color: white;
+    text-decoration: none;
+}
