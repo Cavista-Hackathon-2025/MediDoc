@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
+from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+
+from datetime import datetime
 
 from .forms import AppointmentForm, PrescriptionForm
 
@@ -26,5 +29,21 @@ def create_appointment(request):
 
 @login_required
 def appointments(request):
+    user = request.user
+    now = timezone.now()
+    upcoming_appointments = Appointment.objects.filter(user=request.user, date__gte=now.date()).order_by('date', 'time')
+    
+    past_appointment = Appointment.objects.filter(user=request.user, date__lt=now.date()).order_by('date', 'time')
+    
     appointments = Appointment.objects.filter(user=request.user)
-    return render(request, 'list.html', {'appointments':appointments})
+    
+    cancelled_appointments = Appointment.objects.filter(status='cancelled')
+    context = {
+        'appointments':appointments,
+        'upcoming':upcoming_appointments,
+        'user':user,
+        'cancelled':cancelled_appointments,
+        'past':past_appointment
+    }
+    
+    return render(request, 'appointments.html', context=context)

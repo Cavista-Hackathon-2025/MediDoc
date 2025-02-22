@@ -116,10 +116,10 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 
-AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
-]
+# AUTHENTICATION_BACKENDS = [
+#     "django.contrib.auth.backends.ModelBackend",
+#     "allauth.account.auth_backends.AuthenticationBackend",
+# ]
 
 LOGIN_REDIRECT_URL = "/"  # Adjust as needed
 LOGOUT_REDIRECT_URL = "/"
