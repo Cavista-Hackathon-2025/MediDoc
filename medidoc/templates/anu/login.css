@@ -1,0 +1,58 @@
+body{
+    background-color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+}
+.Create-account-button{
+    background-color: rgb(77, 77, 224);
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    color: black;
+}
+.input-box{
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+.input-form-box{
+    background: whitesmoke;
+    padding:25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h2{
+    margin-bottom: 20px;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+}
+label{
+    font-size:14px ;
+    font-weight: bold ;
+    margin: 10px 0 5px;
+
+}
+small{
+    color: gray;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.create-account-button:hover{
+    cursor:pointer !important;
+    background-color: rgb(136, 136, 226);
+}
+.terms{
+    font-size: 50px;
+    margin-top: 15px;
+}
+.terms a:hover{
+    text-decoration: underlinr;
+}

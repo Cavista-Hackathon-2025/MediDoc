@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment List</title>
+
+    <style>
+        button{
+            background-color: blue;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <h1>Appointment List</h1>
+
+    <ul>
+        {% for appointment in appointments %}
+
+            <div>
+                <li>Appointment ID: {{ appointment.id }}</li>
+                <li>Doctor Name: {{ appointment.provider.first_name }} {{ appointment.provider.last_name }}</li>
+                <li>Date: {{ appointment.date }}</li>
+                <li>Date: {{ appointment.time }}</li>
+                <li>Status: {{ appointment.status }}</li>
+
+                <hr>
+
+            </div>
+
+           
+          
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'create_appointment' %}"><button>Create Appointment</button></a>
+
+</body>
+</html>
