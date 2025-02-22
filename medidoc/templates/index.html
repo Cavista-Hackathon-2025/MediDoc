@@ -26,10 +26,11 @@
 
     <p>{{ user.username }}</p>
 
+    <img src="{{ user.profile_image.url }}" alt="{{ user.username }}" width="100" height="100">
+
     <button><a href="{% url 'logout' %}">Logout</a></button>
-
-
-
+    <button><a href="{% url 'create_appointment' %}">Schedule an appointment</a></button>
+    <button><a href="{% url 'appointments' %}">Appointments</a></button>
 
 
 </body>

@@ -1,0 +1,182 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/68c78e3a7d.js" crossorigin="anonymous"></script>
+       <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome To MediDoc !</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <link rel="stylesheet" href="{% static 'css/landingpage.css' %}">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span class="medi-nav"><a class="navbar-brand" href="#"><i class="fa-solid fa-stethoscope"></i>MediDoc</a></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Find A Doctor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Why Us?</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              
+               </li>
+           
+               <li class="nav-item active">
+                <a class="nav-link" href="#">Parents & Visitors</a>
+              </li>
+             
+               <li class="nav-item active">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+
+               <li class="nav-item active">
+                <a class="nav-link" href="{% url 'user_login' %}"><button>Log In</button></a>
+              </li>
+             
+               <li class="nav-item active">
+                <a class="nav-link" href="{% url 'register' %}"><button>Sign Up</button></a>
+              </li>
+             
+
+          </ul>
+         
+        </div>
+      </nav>
+  
+  
+    <section class="main-body">
+           <h1 class="main-text">Welcome To MediDoc !</h1>
+
+     <p class="sub-text">What a pleasure it is to have you here at MediDoc! <br>
+      You can easily schedule your appointments with your doctors and health institutions</p>
+     <a href=""><button class="find-doctorbtn">Find A Doctor</button></a>
+        </section>
+
+
+        <section class="why-us">
+          <h1 class="choose-medidoc">Why Choose MediDoc?</h1>
+          <p class="why-paragraph">We believe everyone deserves access to high-quality care. 
+            That's why we offer a wide range of services <br> designed to meet your unique needs. 
+             Whether you're looking for preventive care, treatment for a condition, <br>
+             or help managing your mental health, MediDoc is here to help! 
+              </p>
+
+              <div class="why-us-boxes">
+
+                  <div class="box1">
+                    <i class="fa-regular fa-heart"></i> <br><br>
+                    <h5>
+                      Quality care
+                </h5>
+                    <p> We are committed to providing <br>high quality care that exceeds your expectations and healthcare that meets your needs</p>
+                  </div>
+
+                  <div class="box2">  <i class="fa-regular fa-map"></i><br><br> 
+                    <h5>
+                  Committed Locations
+                  </h5>
+                    <p>We have over 20 locations all <br> around
+                       the world, making it easy <br>for you to get 
+                       the care you need.</p>
+                  </div>
+
+                  <div class="box3">  <h5><i class="fa-solid fa-phone"></i> <br><br>
+                    Easy Communications
+                  </h5>
+                    <p>We make it easy for you 
+                      <br>to communicate with your <br>doctors and
+                       access your health information!</p>
+                  </div>
+
+                  <div class="box4">  <h5><i class="fa-regular fa-circle-question"></i> <br><br>
+                    Answers to Your Questions
+                    </h5>
+                    <p> Find answers to your questions <br>
+                      about our services, insurance,
+                      <br> billing and much more!
+                        </div>
+              </div>
+<div class="new-patients">
+  <ul>
+    <li>
+              <p>New Patient Information</p>
+              <h4 class="appointment-expectation">What To Expect at Your First Appointment</h4>
+             <p>If you're a new patient at MediDoc, you may have questions about what to expect during your first appointment. <br>
+              Here's what you need to know!</p>
+            </li>
+            <li> 
+              <img src="{% static 'img/newpatients.jpg' %}" alt="">
+            </li>
+            </ul>
+            </div> 
+            </section>
+
+                <section class = "our-services">
+                  <h1>Manage Your Health</h1>
+                 <p>We offer a variety of convenient online tools that allow you to manage your healthcare from anywhere. Whether you need to schedule an appointment, pay your medical bills, or view your medical record, you can do it all through our secure patient portal !</p>
+                
+              <div class="our-services-boxes">
+
+                <div class="box1"> <h5><i class="fa-solid fa-calendar-check"></i> 
+                  Appointments
+                </h5>
+                  <p> Not only are we committed to timely appointments, but we promise to always deliver! </p>
+                </div>
+
+                <div class="box2"> <h5><i class="fa-solid fa-money-check-dollar"></i> 
+                  Billing & Insurance
+                  </h5>
+                  <p>With our easy-to-navigate website, <br> we are able to provide you with <br> the adequate platform to pay <br> up your bills and renew your  <br>insurance fees. </p>
+                </div>
+
+                <div class="box3"> <h5> <i class="fa-solid fa-universal-access"></i> 
+                  Patient Portal
+                  </h5>
+                  <p>We make it easy for you to communicate with your <br>doctors and access your health information!</p>
+                </div>
+
+                <div class="box4"><h5><i class="fa-solid fa-file"></i></i> 
+                  Medical Records
+                  </h5>
+                <p> Find answers to your questions <br>about our services, insurance, <br>billing and much more!
+                      
+                </div>
+            </div>
+                </section>
+  
+<section class="help-section">
+  
+<h1>Need help finding a doctor?</h1>
+<a href=""><button class="find-doctorbtn2">Find A Doctor</button></a>
+
+</section>
+
+<footer>
+  <div class = "footer-section">
+    <ul>
+      <li>About Us</li>
+      <li>Contact Us</li>
+      <li>FAQs</li>
+      </ul>
+      <p> Copyright &copy 2025 MediDoc</p>
+  </div>
+</footer>
+
+    </body>
+</html>

@@ -17,7 +17,7 @@ def home(request):
 
 def register(request):
     if request.method == "POST":
-        user_form = RegisterForm(request.POST)
+        user_form = RegisterForm(request.POST, request.FILES)
         providerform = ProviderForm(request.POST)
         patientform = PatientForm(request.POST)
         
@@ -73,3 +73,6 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('home')
+
+def index(request):
+    return render(request, 'landingpage.html')

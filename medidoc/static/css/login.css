@@ -81,3 +81,6 @@ input[type='text'], input[type='password']{
     border-radius: 10px;
     font-weight: 600;
 }
+.anchor{
+    color: #4089e8;
+}
