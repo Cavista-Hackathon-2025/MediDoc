@@ -50,7 +50,7 @@ main{
     border-radius: 8px;
     padding: 10px 0;
 }
-,.appointment{
+.appointment{
     display: flex;
     align-items: center;
     padding: 10px 0;
@@ -74,4 +74,9 @@ main{
     font-size:14px ;
     color:black;
     white-space: nowrap;
+}
+
+.appointment li{
+list-style: none;
+display: flex;    
 }
