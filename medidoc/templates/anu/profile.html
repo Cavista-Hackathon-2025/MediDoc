@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile&Preferences-MediDoc</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">MediDoc</div>
+            <nav>
+                 
+                    <a href="#">Home</a>
+                    <a href="#">Patients</a>
+                    <a href="#">Appointments</a>
+                    <a href="#">Messaging</a>
+                    <a href="#">Billing</a>
+                    
+            </nav>
+        </div>
+        <div class="header-right"></div>
+    
+    </header>
+    <main>
+        <h1>Profile & Preferences</h1>
+        <div class="form-chill">
+
+        <form>
+            <div class="form-group">
+                <section class="profile-section">
+                    <h2>Profile</h2>
+                <label for="first-name">First Name</label><br>
+                <input type="text" placeholder="Enter your first-name"/><br>
+                <label for="first-name">Last Name</label><br>
+                <input type="text" placeholder="Enter your last-name"/><br>
+                <label for="first-name">Email</label><br>
+                <input type="text" placeholder="Enter your Email address"/><br>
+                <label for="first-name">Phone</label><br>
+                <input type="text" placeholder="Enter your phone number"/><br>
+            </div>
+        </section>
+            <section class="Preferences-section">
+                <h2> Preferences</h2>
+            <div class="form-group">
+                <label for="language">Language</label><br>
+                <select id="language">
+                    <option value="" disabled selected>Select a language</option>
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                
+                </select>
+                
+            </div>
+            <div class="form-group">
+                <label for="Time zone">Time zone</label><br>
+                <select id="time-zone">
+                    <option value="" disabled selected>Select a time zone</option>
+                    <option value="est">EST</option>
+                    <option value="cst">CST</option>
+                    <option value="pst">pst</option>
+                    <option value="gmt">GMT</option>
+                </select>
+            </div>
+
+            <div class="checkbox-group">
+            <input type="checkbox" id="notifications"/>
+            <label for="notifications"> I would like to receive email notification from mediDoc</label>
+            </div>
+            </section>
+            <div class="action-buttons">
+                <button class="cancel-button">Cancel</button>
+                <button class="save-button">Save</button>
+            </div>
+        </div>
+        </form>
+    </main>
+    
+</body>
+</html>
