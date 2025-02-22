@@ -1,0 +1,77 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    margin:0;
+    padding:0;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background:whitesmoke;
+    padding: 15px 30px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1)
+
+}
+.logo{
+    font-size: 18px;
+    font-weight: bold;
+}
+nav a{
+    margin:0 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+main{
+    max-width: 700px;
+    margin: 40px auto;
+    padding:0 20px;
+}
+.tabs{
+    display: flex;
+    gap: 100px;
+    font-size: 16px;
+    margin-bottom: 15px;
+
+}
+.tabs span{
+    color:black;
+    cursor: pointer;
+}
+.tabs .active{
+    color: black;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(6, 6, 168);
+    padding-bottom: 5px;
+}
+.appointments{
+    background: whitesmoke;
+    border-radius: 8px;
+    padding: 10px 0;
+}
+,.appointment{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+.details{
+    flex-grow: 1;
+}
+.title{
+    font-size:16px ;
+    font-weight:bold ;
+    margin:0 ;
+}
+.sub-text{
+     font-size:14px ;     
+     color:black ;
+     margin:2px 0 0 ;
+
+}
+.time{
+    font-size:14px ;
+    color:black;
+    white-space: nowrap;
+}
