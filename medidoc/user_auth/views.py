@@ -200,3 +200,4 @@ def edit_profile(request):
 def profile(request):
     user = request.user
     return render(request, 'profile.html', {'user':user})
+

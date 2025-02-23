@@ -2,7 +2,7 @@ import os
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-
+from django.conf import settings
 
 from datetime import datetime
 
@@ -50,3 +50,6 @@ def appointments(request):
     
     return render(request, 'appointments.html', context=context)
 
+def patients(request):
+    patients = settings.PATIENT_MODEL.objects.all()
+    return render(request, 'patients1.html', {'patients':patients})

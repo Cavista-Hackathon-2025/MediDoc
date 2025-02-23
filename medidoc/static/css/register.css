@@ -1,0 +1,22 @@
+body{
+    font-family: Arial;
+}
+.container{
+    margin-left: 200px;
+}
+.form-control{
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding-left: 10px;
+}
+form button{
+    height: 35px;
+    width: 350px;
+    background-color: #4089e8;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
