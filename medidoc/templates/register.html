@@ -5,83 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health - Register</title>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 </head>
 <body>
+
+    <div class="container">
+
+        <h1>Register</h1>
+
+        <form id="register-form" action="{% url 'register' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ registerform.as_p }}
+
+
+            <div id="provider-fields" style="display:none;">
+                {{providerform.as_p}}
+            </div>
+
+            <div id="patient-fields" style="display:none;">
+                {{patientform.as_p}}
+            </div>
+
+            <button type="submit">Register</button>
+            <p>Already have an account? <a href="{% url 'user_login' %}">Login Here</a></p>
+        </form>
+
+    </div>
     
-    <h1>Register</h1>
-
-    <form id="register-form" action="{% url 'register' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ registerform.as_p }}
-
-        <div class="form-control">
-            <label class="form-label">{{ registerform.username.label }}</label>
-            {{ registerform.username }}
-            <p style="color: red;">{{ registerform.username.errors }}</p>
-        </div>
-
-        <div class="form-control">
-            <label class="form-label">{{ registerform.first_name.label }}</label>
-            {{ registerform.first_name }}
-            <p style="color: red;">{{ registerform.first_name.errors }}</p>
-        </div>
-
-        <div class="form-control">
-            <label class="form-label">{{ registerform.last_name.label }}</label>
-            {{ registerform.last_name }}
-            <p style="color: red;">{{ registerform.last_name.errors }}</p>
-        </div>
-
-        <div class="form-control">
-            <label class="form-label">{{ registerform.email.label }}</label>
-            {{ registerform.email }}
-            <p style="color: red;">{{ registerform.email.errors }}</p>
-        </div>
-
-        <div class="form-control">
-            <label class="form-label">{{ registerform.gender.label }}</label>
-            {{ registerform.gender }}
-            <p style="color: red;">{{ registerform.gender.errors }}</p>
-        </div>
-
-        <div class="form-control">
-            <label class="form-label">{{ registerform.role.label }}</label>
-            {{ registerform.role }}
-            <p style="color: red;">{{ registerform.role.errors }}</p>
-        </div>
-
-        <div class="form-control">
-            <label class="form-label">{{ registerform.profile_image.label }}</label>
-            {{ registerform.profile_image }}
-            <p style="color: red;">{{ registerform.profile_image.errors }}</p>
-        </div>
-
-
-        <div id="provider-fields" style="display:none;">
-            <div class="form-control">
-                <label class="form-label">{{ providerform.provider_date_of_birth.label }}</label>
-                {{ providerform.provider_date_of_birth }}
-                <p style="color: red;">{{ providerform.provider_date_of_birth.errors }}</p>
-            </div>
-            <div class="form-control">
-                <label class="form-label">{{ providerform.speciality.label }}</label>
-                {{ providerform.speciality }}
-                <p style="color: red;">{{ providerform.speciality.errors }}</p>
-            </div>
-        </div>
-
-        <div id="patient-fields" style="display:none;">
-            <div class="form-control">
-                <label class="form-label">{{ patientform.date_of_birth.label }}</label>
-                {{ patientform.date_of_birth }}
-                <p style="color: red;">{{ patientform.date_of_birth.errors }}</p>
-            </div>
-        </div>
-
-        <button type="submit">Register</button>
-        <p>Already have an account? <a href="{% url 'user_login' %}">Login Here</a></p>
-    </form>
+    
 
     <script>
         console.log('Running');

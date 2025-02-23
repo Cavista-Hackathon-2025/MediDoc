@@ -1,14 +1,52 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient</title>
+    <link rel="stylesheet" href="{% static 'css/patients.css' %}">
 </head>
 <body>
     
+    <nav>
+        <div class="left">
+            <i class="fa-solid fa-stethoscope"></i>
+            <h3 class="header">MediDoc</h3>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Appointments</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">About Us</a></li>
+            </ul>
+            <a href=""><button class="btn login">Log In</button></a>
+            <a href=""><button class="btn signup">Sign Up</button></a>
+        </div>
+    </nav>
 
-    <h1>Welcome, {{ user.first_name }} {{ user.last_name }}</h1>
+    <div class="container">
+        <h1>Patients</h1>
+
+        <input type="search" name="" id="">
+
+        <div class="viewed">
+            <h3>Recently Viewed</h3>
+            <div class="cards">
+                {% for patient in patients %}
+                    <div class="card">
+                        <img src="{% static 'patient.user.profile_image' %}" alt="">
+                        <div class="text">
+                            <h4>{{ provider.user.first_name }} {{ provider.user.last_name }}</h4>
+                            <p> {{ provider.user.gender }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 
 </body>
 </html>

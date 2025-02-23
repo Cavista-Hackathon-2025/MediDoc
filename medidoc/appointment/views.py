@@ -2,13 +2,15 @@ import os
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-
+from django.conf import settings
 
 from datetime import datetime
 
 from .forms import AppointmentForm, PrescriptionForm
 
 from .models import Medication, Appointment
+
+medi_patient = settings.PATIENT_MODEL 
 
 # Create your views here.
 
@@ -50,3 +52,6 @@ def appointments(request):
     
     return render(request, 'appointments.html', context=context)
 
+def patients(request):
+    patients = medi_patient.objects.all()
+    return render(request, 'patients1.html', {'patients':patients})

@@ -7,7 +7,6 @@ nav{
     display: flex;
     padding: 10px 20px;
     align-items: center;
-    align-items: center;
     border-bottom: 1px solid grey;
 }
 .left{
@@ -45,48 +44,24 @@ nav{
     background-color: #bbc6d3;
     color: white;
 } 
-
-.content-section { display: none; }
-#overview { display: block; } /* Show overview by default */
-
-.header{
-    margin-bottom: 20px;
+.right a:hover {
+    color: #4089e8;
 }
-.appointment{
+.container{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.card{
     display: flex;
-    margin-bottom: 20px;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
 }
-.first{
-    margin-top: 20px;
-}
-.appointment img{
-    margin: 20px 0;
-    width: 50px;
-    height: 50px;
+.card img{
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
 }
-.left{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-right: auto;
-}
-.left .text .main{
-    margin-bottom: -5px;
-    font-weight: bold;
-}
-.right{
-    margin-left: auto;
-}
-.button{
-    padding: 10px;
-    background-color: #4089e8;
-    color: white;
-    border: none;
-    border-radius: 10px;
-}
-.button a{
-    color: white;
-    text-decoration: none;
+.card .text p{
+    color: #4089e8;
 }
