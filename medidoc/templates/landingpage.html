@@ -18,27 +18,21 @@
   </head>
   <body>
 
-  <style>
-    
-  </style>
-
-
-    <nav>
+      <nav>
       <div class="left">
           <i class="fa-solid fa-stethoscope"></i>
           <h3 class="header" style="cursor: pointer;">MediDoc</h3>
       </div>
       <div class="right">
-          <ul>
-              <li><a href="">Find A Doctor</a></li>
-              <li><a href="">Why Us?</a></li>
-              <li><a href="">Services</a></li>
-              <li><a href="">About Us</a></li>
-              <a href=""><button class="btn-login">Log In</button></a>
-              <a href=""><button class="btn-signup">Sign Up</button></a>
-          </ul>
-         
-      </div>
+        <ul>
+            <li><a href="{% url 'register'%}">Find A Doctor</a></li>
+            <li><a href="#why-us">Why Us?</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#help">FAQ</a></li>
+        </ul>
+        <a href="{% url 'user-login' %}"><button class="btn login">Log In</button></a>
+        <a href="{% url 'register' %}"><button class="btn signup">Sign Up</button></a>
+    </div>
   </nav>
   
   

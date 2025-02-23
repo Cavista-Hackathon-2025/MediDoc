@@ -10,17 +10,25 @@
 <body>
     <header>
         <div class="header-left">
-            <div class="logo">MediDoc</div>
             <nav>
-                 
-                    <a href="#">Home</a>
-                    <a href="#">Patients</a>
-                    <a href="#">Appointments</a>
-                    <a href="#">Messaging</a>
-                    <a href="#">Billing</a>
-                    
+                <div class="left">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <h3 class="header" style="cursor: pointer;">MediDoc</h3>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="#">Patients</a></li>
+                        <li><a href="{% url 'appointments' %}">Appointments</a></li>
+                        <li><a href="#">Messaging</a></li>
+                        <li><a href="#">Billing</a></li>
+                       
+
+                    </ul>
+                   
+                </div>
             </nav>
-        </div>
+            
         <div class="header-right"></div>
     
     </header>
