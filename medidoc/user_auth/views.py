@@ -56,7 +56,7 @@ def register(request):
                 patient.save()
                 
             login(request, user)
-            return redirect('home')
+            return redirect('profile')
         
     else:
         user_form = RegisterForm()
@@ -82,7 +82,7 @@ def user_login(request):
             
             if user is not None:
                 login(request, user)
-                return redirect('home')
+                return redirect('profile')
     else:
         loginform = AuthenticationForm()
         
@@ -186,15 +186,17 @@ def get_upcoming_events(request):
     return render(request, 'events.h:tml', {'events': events})
 
 def edit_profile(request):
+    user = request.user
     if request.method == "POST":
-        user_form = RegisterForm(request.POST, request.FILES, instance=request.user)
+        user_form = RegisterForm(request.POST, request.FILES, instance=user)
         if user_form.is_valid():
             profile = user_form.save()
             profile.save()
+            return redirect('profile')
     else:
         user_form = RegisterForm(instance=request.user)
         
-    return render(request, 'edit_profile.html', {'userform':user_form})
+    return render(request, 'edit.html', {'userform':user_form})
 
 
 def profile(request):
