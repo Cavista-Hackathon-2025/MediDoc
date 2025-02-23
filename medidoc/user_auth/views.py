@@ -185,10 +185,18 @@ def get_upcoming_events(request):
 
     return render(request, 'events.h:tml', {'events': events})
 
-def profile(request):
+def edit_profile(request):
     if request.method == "POST":
         user_form = RegisterForm(request.POST, request.FILES, instance=request.user)
         if user_form.is_valid():
-            profile = userform.save()
+            profile = user_form.save()
             profile.save()
-            
+    else:
+        user_form = RegisterForm(instance=request.user)
+        
+    return render(request, 'edit_profile.html', {'userform':user_form})
+
+
+def profile(request):
+    user = request.user
+    return render(request, 'profile.html', {'user':user})
