@@ -21,13 +21,13 @@
       </div>
       <div class="right">
           <ul>
-              <li><a href="">Find A Doctor</a></li>
-              <li><a href="">Why Us?</a></li>
-              <li><a href="">Services</a></li>
-              <li><a href="">About Us</a></li>
+              <li><a href="{% url 'register'%}">Find A Doctor</a></li>
+              <li><a href="#why-us">Why Us?</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#help">FAQ</a></li>
           </ul>
-          <a href=""><button class="btn login">Log In</button></a>
-          <a href=""><button class="btn signup">Sign Up</button></a>
+          <a href="{% url 'user-login' %}"><button class="btn login">Log In</button></a>
+          <a href="{% url 'register' %}"><button class="btn signup">Sign Up</button></a>
       </div>
   </nav>
 
@@ -41,7 +41,7 @@
         </section>
 
 
-        <section class="why-us">
+        <section id="why-us" class="why-us">
           <h1 class="choose-medidoc">Why Choose MediDoc?</h1>
           <p class="why-paragraph">We believe everyone deserves access to high-quality care. 
             That's why we offer a wide range of services <br> designed to meet your unique needs. 
@@ -99,7 +99,7 @@
             </div> 
             </section>
 
-                <section class = "our-services">
+                <section id="services" class = "our-services">
                   <h1>Manage Your Health</h1>
                  <p>We offer a variety of convenient online tools that allow you to manage your healthcare from anywhere. Whether you need to schedule an appointment, pay your medical bills, or view your medical record, you can do it all through our secure patient portal !</p>
                 
