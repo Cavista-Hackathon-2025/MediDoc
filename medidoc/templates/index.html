@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/68c78e3a7d.js" crossorigin="anonymous"></script>
+
     <title>Health</title>
 
     <style>
@@ -18,24 +23,106 @@
             color: white;
             font-weight: bold;
         }
+        .sidebar{
+            display: grid;
+            gap: 20px;
+            width: 20%;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+        }
+        nav{
+            display: flex;
+            padding: 10px 20px;
+            align-items: center;
+            border-bottom: 1px solid grey;
+            margin-bottom: 30px;
+        }
+        .left{
+            display: flex;
+            gap: 10px; 
+            font-size: 22px;
+            margin-right: auto;
+            align-items: center;
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            gap: 20px
+        }
+        .right ul{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .right ul li{
+            list-style: none;
+            font-size: 14px;
+            padding-top: 20px;
+        }
+        .right a{
+            text-decoration: none;
+            color: black;
+        }
+        .right .btn{
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        .login{
+            background-color: #bbc6d3;
+            color: white;
+        } 
+        .right a:hover {
+            color: #4089e8;
+        }
+        .img{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+        .sidebar button{
+            height: 70px;
+        }
     </style>
 </head>
 <body>
+
+    <nav>
+        <div class="left">
+            <i class="fa-solid fa-stethoscope"></i>
+            <h3 class="header">MediDoc</h3>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="{% url 'register'%}">Find A Doctor</a></li>
+                <li><a href="#why-us">Why Us?</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#help">FAQ</a></li>
+            </ul>
+            <img class="img" src="{{ user.profile_image.url }}" alt="profile image">
+        </div>
+    </nav>
+
+    <h1>Welcome {{ user.username }}</h1>
+
+    <div class="sidebar">
+        <button><a href="{% url 'logout' %}">Logout</a></button>
+        <button><a href="{% url 'create_appointment' %}">Schedule an appointment</a></button>
+        <button><a href="{% url 'appointments' %}">Appointments</a></button>
+        <button><a href="{% url 'get_upcoming_events' %}">Upcoming Events</a></button>
+        <button><a href="{% url 'create_event' %}">Create Event</a></button>
+        <button><a href="{% url 'profile' %}">Profile</a></button>
+        <button><a href="{% url 'edit_profile' %}">Edit Profile</a></button>
+        <button><a href="{% url 'patients' %}">My Patients</a></button>
+    </div>
+
+    <!-- https://chatgpt.com/share/67b8ecc9-1da0-8010-a27d-5699877bfba2 -->
     
-    <h1>Health</h1>
-
-    <p>{{ user.username }}</p>
-
-    <img src="{{ user.profile_image.url }}" alt="{{ user.username }}" width="100" height="100">
-
-    <button><a href="{% url 'logout' %}">Logout</a></button>
-    <button><a href="{% url 'create_appointment' %}">Schedule an appointment</a></button>
-    <button><a href="{% url 'appointments' %}">Appointments</a></button>
-    <button><a href="{% url 'get_upcoming_events' %}">Upcoming Events</a></button>
-    <button><a href="{% url 'create_event' %}">Create Event</a></button>
-    <button><a href="{% url 'profile' %}">Profile</a></button>
-    <button><a href="{% url 'edit_profile' %}">Edit Profile</a></button>
-    <button><a href="{% url 'patients' %}">My Patients</a></button>
 
 
 
