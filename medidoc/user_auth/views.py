@@ -183,5 +183,12 @@ def get_upcoming_events(request):
     
     events = events_result.get('items', [])
 
-    return render(request, 'events.html', {'events': events})
+    return render(request, 'events.h:tml', {'events': events})
 
+def profile(request):
+    if request.method == "POST":
+        user_form = RegisterForm(request.POST, request.FILES, instance=request.user)
+        if user_form.is_valid():
+            profile = userform.save()
+            profile.save()
+            
