@@ -2,6 +2,57 @@ body{
     padding: 0 40px !important;
 }
 
+/*---------navbar---------*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+nav{
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+.left{
+    display: flex;
+    gap: 10px; 
+    font-size: 22px;
+    margin-right: auto;
+    align-items: center;
+}
+.right{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 20px;
+}
+.right ul{
+    display: flex;
+    gap: 20px;
+}
+.right ul li{
+    list-style: none;
+    font-size: 14px;
+}
+.right a{
+    text-decoration: none;
+    color: black;
+}
+.right .btn{
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+.login{
+    background-color: #bbc6d3;
+    color: white;
+}
+.right a:hover{
+    color: #4089e8;
+}
+
 
 /*****-----------nav-bar section*/
 .medi-nav{
