@@ -1,6 +1,8 @@
+import os
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+
 
 from datetime import datetime
 
@@ -47,3 +49,4 @@ def appointments(request):
     }
     
     return render(request, 'appointments.html', context=context)
+

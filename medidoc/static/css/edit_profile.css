@@ -21,17 +21,17 @@ header{
     display: flex;
     align-items: center;
 }
-.logo[
-    font-size:18px;
-    font-weight:bold;
-    margin-right:40px;
-]
-nav a:[
+.logo{
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 40px;
+}
+nav a{
     margin-right:20px;
     text-decoration:none;
     color: black;
     font-size:14px;
-]
+}
 nav a:hover{
     text-decoration: underline;
 }

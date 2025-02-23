@@ -1,4 +1,5 @@
 {% load static %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +54,7 @@
             <p class="or">or</p>
 
             <div class="buttons">
-                <a href="#" class="btn">Sign in with Google</a>
+                <a href="{% provider_login_url 'google' %}" class="btn">Sign in with Google</a>
                 <button class="btn">Sign in with Apple</button>
             </div>
 
