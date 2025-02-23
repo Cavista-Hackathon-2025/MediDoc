@@ -113,12 +113,21 @@ input{
 }
 .box{
     display:flex;
+    margin-top:30px;
 }
 .account.box p, .about.box text{
     margin-right: auto;
 }
 .account.box i, .about.box i{
     margin-left: auto;
+}
+
+.place-account{
+    margin-bottom:15px ;
+}
+
+.place-about.text{
+        margin: bottom 10px; ;
 }
 .notification .box{
     display: flex;
