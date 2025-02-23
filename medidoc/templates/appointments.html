@@ -1,3 +1,8 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 
 
@@ -9,103 +14,100 @@
           <title>Dashboard</title>
           
 
-      </head>
-      <body>
-          <div class="container mt-4">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container mt-4">
 
-            <h1 class='header'>Appointments</h1>
-              <ul class="nav nav-tabs tabs">
-                  <li class="nav-item">
-                      <a class="nav-link active" href="#" data-target="upcoming">Upcoming</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#" data-target="past">Past</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#" data-target="cancelled">Cancelled</a>
-                  </li>
-              </ul>
-      
-              <div id="upcoming" class="content-section">
-                {% if upcoming %}
-                    {% for appointment in upcoming %}
-                    <div class="appointment first">
-                        <div class="left">
-                            <img src="{{ appointment.provider.user.profile_image.url }}" alt="{{ appointment.provider.user.username }}">
-                            <div class="text">
-                                <p class="main">Consultation with Dr. {{ appointment.provider.user.last_name }} {{ appointment.provider.user.first_name }}</p>
-                                <small>{{ user.first_name }} {{ user.last_name }}</small>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <p class="time">{{ appointment.date }} {{ appointment.time }}</p>
+        <h1 class='header'>Appointments</h1>
+            <ul class="nav nav-tabs tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" data-target="upcoming">Upcoming</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="past">Past</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="cancelled">Cancelled</a>
+                </li>
+            </ul>
+    
+            <div id="upcoming" class="content-section">
+            {% if upcoming %}
+                {% for appointment in upcoming %}
+                <div class="appointment first">
+                    <div class="left">
+                        <img src="{{ appointment.provider.user.profile_image.url }}" alt="{{ appointment.provider.user.username }}">
+                        <div class="text">
+                            <p class="main">Consultation with Dr. {{ appointment.provider.user.last_name }} {{ appointment.provider.user.first_name }}</p>
+                            <small>{{ user.first_name }} {{ user.last_name }}</small>
                         </div>
                     </div>
-                    {% endfor %}
-                {% else %}
-                    <p class="no-appointments">You have no upcoming appointments.</p>
-                    
-                {% endif %}
-                <a href="{% url 'create_appointment' %}"><button class="button">Create Appointment</button></a>
-            </div>
-            
-              <div id="past" class="content-section">
-                {% if past %}
-                    {% for appointment in past %}
-                    <div class="appointment first">
-                        <div class="left">
-                            <img src="{{ appointment.provider.user.profile_image.url }}" alt="{{ appointment.provider.user.username }}">
-                            <div class="text">
-                                <p class="main">Consultation with Dr. {{ appointment.provider.user.last_name }} {{ appointment.provider.user.first_name }}</p>
-                                <small>{{ user.first_name }} {{ user.last_name }}</small>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <p class="time">{{ appointment.date }} {{ appointment.time }}</p>
-                        </div>
+                    <div class="right">
+                        <p class="time">{{ appointment.date }} {{ appointment.time }}</p>
                     </div>
-                    {% endfor %}
-                {% else %}
-                    <p class="no-appointments">You have no past appointments.</p>
-                {% endif %}
-            </div>
-            <div id="cancelled" class="content-section">
-                {% if cancelled %}
-                    {% for appointment in cancelled %}
-                    <div class="appointment first">
-                        <div class="left">
-                            <img src="{{ appointment.provider.user.profile_image.url }}" alt="{{ appointment.provider.user.username }}">
-                            <div class="text">
-                                <p class="main">Consultation with Dr. {{ appointment.provider.user.last_name }} {{ appointment.provider.user.first_name }}</p>
-                                <small>{{ user.first_name }} {{ user.last_name }}</small>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <p class="time">{{ appointment.date }} {{ appointment.time }}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-                {% else %}
-                    <p class="no-appointments">You have no cancelled appointments.</p>
-                {% endif %}
-            </div>
-      
-          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-          <script>
-              $(document).ready(function(){
-                  $('.nav-link').click(function(){
-                      var target = $(this).data('target');
-                      $('.content-section').hide();
-                      $('#' + target).fadeIn();
-                      $('.nav-link').removeClass('active');
-                      $(this).addClass('active');
-                  });
-              });
-          </script>
-      </body>
-      </html>
-      
-       
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="no-appointments">You have no upcoming appointments.</p>
+                
+            {% endif %}
+            <a href="{% url 'create_appointment' %}"><button class="button">Create Appointment</button></a>
+        </div>
         
-</body>
+            <div id="past" class="content-section">
+            {% if past %}
+                {% for appointment in past %}
+                <div class="appointment first">
+                    <div class="left">
+                        <img src="{{ appointment.provider.user.profile_image.url }}" alt="{{ appointment.provider.user.username }}">
+                        <div class="text">
+                            <p class="main">Consultation with Dr. {{ appointment.provider.user.last_name }} {{ appointment.provider.user.first_name }}</p>
+                            <small>{{ user.first_name }} {{ user.last_name }}</small>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p class="time">{{ appointment.date }} {{ appointment.time }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="no-appointments">You have no past appointments.</p>
+            {% endif %}
+        </div>
+        <div id="cancelled" class="content-section">
+            {% if cancelled %}
+                {% for appointment in cancelled %}
+                <div class="appointment first">
+                    <div class="left">
+                        <img src="{{ appointment.provider.user.profile_image.url }}" alt="{{ appointment.provider.user.username }}">
+                        <div class="text">
+                            <p class="main">Consultation with Dr. {{ appointment.provider.user.last_name }} {{ appointment.provider.user.first_name }}</p>
+                            <small>{{ user.first_name }} {{ user.last_name }}</small>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p class="time">{{ appointment.date }} {{ appointment.time }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="no-appointments">You have no cancelled appointments.</p>
+            {% endif %}
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.nav-link').click(function(){
+                    var target = $(this).data('target');
+                    $('.content-section').hide();
+                    $('#' + target).fadeIn();
+                    $('.nav-link').removeClass('active');
+                    $(this).addClass('active');
+                });
+            });
+        </script>
+    </body>
 </html>

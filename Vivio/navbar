@@ -1,0 +1,6 @@
+Youll go to appointment/urls.py 
+Youll also go to user_auth/urls.py
+
+<a href="{% url 'appointment' %}">Appointment</a>
+
+<a href="{% url 'register' %}">Register</a>
